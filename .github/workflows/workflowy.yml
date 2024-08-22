@@ -19,13 +19,10 @@ jobs:
       ENVY_1: ${{ steps.exporty.outputs.ENVY_1 }}
     steps:
       - name: set-envy
-        id: set-envy
         run: echo "ENVY_1=this env is set in secundi" >> $GITHUB_ENV
       - name: secundi
-        id: secundi
         run: echo $GITHUB_SHA
       - name: exporty
-        id: exporty
         run: echo "::set-output name=ENVY_1::$(echo $ENVY_1)"
 
   trenta:
