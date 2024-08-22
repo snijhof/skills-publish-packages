@@ -31,6 +31,6 @@ jobs:
     steps:
       - name: printy
         run: |
-          echot $ENVY_1
+          echo $ENVY_1
 
       
