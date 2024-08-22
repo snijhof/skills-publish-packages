@@ -19,6 +19,7 @@ jobs:
       ENVY_1: ${{ steps.exporty.outputs.ENVY_1 }}
     steps:
       - name: set-envy
+        id: set-envy
         run: echo "ENVY_1=this env is set in secundi" >> $GITHUB_OUTPUT
 
   trenta:
