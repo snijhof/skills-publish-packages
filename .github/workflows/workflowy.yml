@@ -34,6 +34,5 @@ jobs:
 
     steps:
       - name: printy
-        run: echo "The value of my env is: ${{ needs.new_job.outputs.ENVY_1 }}"
-
-      
+        run: |
+          echo "The value of my env is: ${{needs.new_job.outputs.ENVY_1}}"
