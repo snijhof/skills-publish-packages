@@ -29,4 +29,4 @@ jobs:
     steps:
       - name: printy
         run: |
-          echo "The value of my env is: ${{needs.exporty.outputs.ENVY_1}}"
+          echo "The value of my env is: ${{needs.secundi.outputs.ENVY_1}}"
