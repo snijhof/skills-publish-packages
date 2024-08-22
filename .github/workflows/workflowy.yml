@@ -18,8 +18,8 @@ jobs:
     outputs:
       ENVY_1: ${{ steps.exporty.outputs.ENVY_1 }}
     steps:
-      - name: set-envy
-        id: set-envy
+      - name: exporty
+        id: exporty
         run: echo "ENVY_1=this env is set in secundi" >> $GITHUB_OUTPUT
 
   trenta:
@@ -29,4 +29,4 @@ jobs:
     steps:
       - name: printy
         run: |
-          echo "The value of my env is: ${{needs.secundi.outputs.ENVY_1}}"
+          echo "The value of my env is: ${{needs.exporty.outputs.ENVY_1}}"
