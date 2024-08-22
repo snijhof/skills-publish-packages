@@ -13,23 +13,19 @@ jobs:
           echo firsty
           echo is thirsty
 
-  new_job:
+  secundi:
     runs-on: ubuntu-latest
     outputs:
       ENVY_1: ${{ steps.exporty.outputs.ENVY_1 }}
     steps:
       - name: set-envy
-        run: echo "ENVY_1=this env is set in secundi" >> $GITHUB_ENV
-      - name: secundi
-        run: echo $GITHUB_SHA
-      - name: exporty
-        run: echo "::set-output name=ENVY_1::$(echo $ENVY_1)"
+        run: echo "ENVY_1=this env is set in secundi" >> $GITHUB_OUTPUT
 
   trenta:
     runs-on: ubuntu-latest
-    needs: new_job
+    needs: secundi
 
     steps:
       - name: printy
         run: |
-          echo "The value of my env is: ${{needs.new_job.outputs.ENVY_1}}"
+          echo "The value of my env is: ${{needs.secundi.outputs.ENVY_1}}"
